@@ -1,10 +1,20 @@
-name : Basic Work Flow
+name: Main Branch Deployment
 
-on : 
-  workflow_dispatch:
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   deploy:
-    runs-on :ubuntu-latest
+    runs-on: ubuntu-latest
+
     steps:
-      - run: echo "this is my workflow"
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Add your deployment steps here
+      # For example, if you're deploying a web server:
+      - name: Start web server
+        run: |
+          # Command to start your web server, e.g., npm start, python app.py, etc.
