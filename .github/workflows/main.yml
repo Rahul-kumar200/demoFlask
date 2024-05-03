@@ -13,6 +13,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Use Secret 1
+        run: echo ${{ secrets.SECRET_1 }}
+
+      - name: Use Secret 2
+        run: echo ${{ secrets.SECRET_2 }}
+
       # Add your deployment steps here
       # For example, if you're deploying a web server:
       - name: Start web server
